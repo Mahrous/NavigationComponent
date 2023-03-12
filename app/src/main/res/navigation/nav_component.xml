@@ -59,13 +59,13 @@
     </fragment>
     <fragment
         android:id="@+id/settingFragment2"
-        android:name="com.example.testkotlingradle.ui.setting.SettingFragment"
+        android:name="com.example.testkotlingradle.ui.search.SearchFragment"
         android:label="Setting"
         tools:layout="@layout/fragment_setting" />
     <fragment
         android:id="@+id/terms"
         android:name="com.example.testkotlingradle.ui.terms.Terms"
-        android:label="fragment_terms"
+        android:label="Terms"
         tools:layout="@layout/fragment_terms" />
     <action
         android:id="@+id/action_global_terms"
@@ -74,5 +74,10 @@
         app:exitAnim="@anim/slide_out_bottom"
         app:popEnterAnim="@anim/slide_in_bottom"
         app:popExitAnim="@anim/slide_out_top" />
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.example.testkotlingradle.ui.search.SearchFragment"
+        android:label="Search"
+        tools:layout="@layout/fragment_search" />
 
 </navigation>

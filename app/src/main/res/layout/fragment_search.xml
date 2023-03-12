@@ -4,28 +4,25 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
         <variable
             name="model"
-            type="com.example.testkotlingradle.ui.setting.SettingFragment" />
+            type="com.example.testkotlingradle.ui.search.SearchFragment" />
     </data>
-
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
         android:orientation="vertical"
-        tools:context=".ui.setting.SettingFragment">
-
+        tools:context=".ui.search.SearchFragment">
 
         <TextView
             android:id="@+id/text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="I am settings"
+            android:text="I am Search"
             android:textColor="@color/black"
             android:textSize="24sp" />
 
-</LinearLayout>
+    </LinearLayout>
 </layout>

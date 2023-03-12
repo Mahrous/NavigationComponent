@@ -26,6 +26,8 @@
 
 
         <androidx.fragment.app.FragmentContainerView
+            android:layout_above="@+id/nav"
+            android:layout_below="@+id/toolbare"
             android:id="@+id/nave_host_fragment"
             android:name="androidx.navigation.fragment.NavHostFragment"
             android:layout_width="match_parent"
@@ -33,5 +35,15 @@
             app:defaultNavHost="true"
             app:navGraph="@navigation/nav_component" />
 
+
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+           android:id="@+id/nav"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            app:menu="@menu/bottom_nav"
+
+            />
     </RelativeLayout>
 </layout>
