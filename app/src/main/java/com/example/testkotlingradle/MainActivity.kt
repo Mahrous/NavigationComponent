@@ -23,34 +23,49 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        //view binding
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
+
+        //To setup fragment  as the navigation Host
         val navHostFragment =
             supportFragmentManager.findFragmentById(R.id.nave_host_fragment) as NavHostFragment
+
+        //to navigate between home and search by bottom navigation
+        // without saving navigate between them inside stack
         appBarConfiguration = AppBarConfiguration(
             setOf(R.id.homeFragment2, R.id.searchFragment)
         )
 
+        // To find navigation controller -> (@navigation/nav_component.xml)
         navController = navHostFragment.findNavController()
 
-
+        //To setup the tool bare
         setSupportActionBar(binding.toolbare)
-        setupActionBarWithNavController(navController , appBarConfiguration)
 
+
+        //setup action bare cases that care about navigation between (bottom nav tabs )
+        // and navigation between others fragments at home
+        setupActionBarWithNavController(navController, appBarConfiguration)
+
+        //set up bottom navigation controller to bottom navigation component at XML
         binding.nav.setupWithNavController(navController)
 
 
     }
 
+    //set up me nave controller
     override fun onSupportNavigateUp(): Boolean {
         return navController.navigateUp() || super.onSupportNavigateUp()
     }
 
+    //set up menu
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.options_menu, menu)
 
         return true
     }
 
+    //set up menu click
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
 
         return if (item.itemId == R.id.termsAndCondition) {
