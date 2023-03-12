@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_component"
+    app:startDestination="@id/homeFragment2">
+
+    <fragment
+        android:id="@+id/homeFragment2"
+        android:name="com.example.testkotlingradle.ui.home.HomeFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment2_to_loginFragment2"
+            app:destination="@id/loginFragment2"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/loginFragment2"
+        android:name="com.example.testkotlingradle.ui.login.LoginFragment"
+        android:label="Login"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_loginFragment2_to_welcomFragment"
+            app:destination="@id/welcomFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right">
+            <argument
+                android:name="username"
+                android:defaultValue="Florien" />
+            <argument
+                android:name="password"
+                android:defaultValue="MM##$112" />
+        </action>
+
+    </fragment>
+    <fragment
+        android:id="@+id/welcomFragment"
+        android:name="com.example.testkotlingradle.ui.welcom.WelcomFragment"
+        android:label="Welcom"
+        tools:layout="@layout/fragment_welcom">
+        <argument
+            android:name="username"
+            app:argType="string" />
+        <argument
+            android:name="password"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_welcomFragment_to_homeFragment2"
+            app:destination="@id/homeFragment2"
+            app:popUpTo="@id/homeFragment2"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingFragment2"
+        android:name="com.example.testkotlingradle.ui.setting.SettingFragment"
+        android:label="Setting"
+        tools:layout="@layout/fragment_setting" />
+    <fragment
+        android:id="@+id/terms"
+        android:name="com.example.testkotlingradle.ui.terms.Terms"
+        android:label="fragment_terms"
+        tools:layout="@layout/fragment_terms" />
+    <action
+        android:id="@+id/action_global_terms"
+        app:destination="@id/terms"
+        app:enterAnim="@anim/slide_in_top"
+        app:exitAnim="@anim/slide_out_bottom"
+        app:popEnterAnim="@anim/slide_in_bottom"
+        app:popExitAnim="@anim/slide_out_top" />
+
+</navigation>
